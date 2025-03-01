@@ -1,0 +1,112 @@
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    font-family: Arial, sans-serif;
+}
+
+header {
+    background-color: #e50914;
+    padding: 10px 20px;
+}
+
+.overlay{
+
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 0; /* Assurez-vous que l'overlay soit au-dessus de l'arrière-plan */
+    background-image: url("https://assets.nflxext.com/ffe/siteui/vlv3/f268d374-734d-474f-ad13-af5ba87ef9fc/web/FR-en-20250210-TRIFECTA-perspective_12087b70-f219-4ae4-9468-9c20dd344ccc_small.jpg");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    filter: brightness(0.4); /* Ajustez cette valeur entre 0 et 1 pour changer la luminosité */
+}
+
+
+.logo {
+    position: absolute;
+    left: 150px;
+    top : -30px;
+    margin: auto;
+}
+
+
+.login-container {
+    background: rgba(0, 0, 0, 0.8);
+    padding: 40px;
+    width: 350px;
+    height: 700px;
+    border-radius: 8px;
+    text-align: center;
+    color: white;
+    z-index: 1;
+}
+
+h2 {
+    margin-bottom: 20px;
+}
+
+input {
+    width: 95%;
+    padding: 12px;
+    margin: 10px 0;
+    border: none;
+    border-radius: 5px;
+    background: #333;
+    color: white;
+    opacity: 50% ;
+}
+
+button {
+    width: 100%;
+    padding: 12px;
+    margin: 10px 0;
+    border: none;
+    border-radius: 5px;
+    background: red;
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+button.code-signin {
+    background: rgba(255, 255, 255, 0.2);
+    border: 1px solid gray;
+}
+
+button.loginbtn:hover {
+    transition: 0.5s;
+    background: rgba(255, 0, 0, 0.411);
+}
+
+.options {
+    display: flex;
+    justify-content: space-between;
+    font-size: 14px;
+}
+
+
+
+.options label {
+    display: inline-flex;
+    align-items: center;
+}
+
+.separator {
+    margin: 15px 0;
+    font-weight: bold;
+}
+
+p, small {
+    font-size: 14px;
+    color: gray;
+}
+
+a {
+    color: white;
+}
